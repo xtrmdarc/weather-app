@@ -13,18 +13,28 @@ const uiManager = (()=> {
   const unitSwitch = document.querySelector('#units');
   const fareheintSwitch = document.querySelector('#farenheit-switch');
   const celsiusSwitch = document.querySelector('#celsius-switch');
+  const mainLoader = document.querySelector('#main-loader');
+  const errorMessage = document.querySelector('#error-message');
   let degreeUnit = 'c';
 
   inputGeo.addEventListener('keypress',(e) => {
     const queryValue = e.target.value;
+    errorMessage.style.display = 'none';
+
     if(e.code === 'Enter' && queryValue.trim().length > 0)
     {
+      mainLoader.style.display = 'block';
+      
+
       UnsplashApi.getImageBySearch(queryValue).then((response)=> {
         mainDOM.style.backgroundImage = `url(${response.url})`;
-      });
-
-      OpenWeatherApi.getWeatherByCity(queryValue, degreeUnit).then((weather)=> {
-        updateWeather(weather);
+        mainLoader.style.display = 'none';
+        OpenWeatherApi.getWeatherByCity(queryValue, degreeUnit).then((weather)=> {
+          updateWeather(weather);
+        }).catch((err) => {
+          errorMessage.style.display = 'block';
+          errorMessage.textContent = err;
+        });
       });
     }
   });

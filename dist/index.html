@@ -16,9 +16,15 @@
             <hr>
             <span id="farenheit-switch" class="temp-switch" > ºF </span>
           </div>
-          <div class="geo-wrapper">
-            <input id="input-geo" type="text" class="input-geo" placeholder="Search your place">
+          <div class="search-wrapper">
+            <div id="main-loader" class="loader">
+            </div>
+            <div class="geo-wrapper">
+              <input id="input-geo" type="text" class="input-geo" placeholder="Search your place">
+              <span id="error-message" >City not found</span>
+            </div>
           </div>
+          
         </nav>
       </header>
       <div class="main-content">
