@@ -1,6 +1,6 @@
 class Weather {
 
-  constructor(temperature, pressure, humidity, tempMin, tempMax, windSpeed, description) {
+  constructor(temperature, pressure, humidity, tempMin, tempMax, windSpeed, description, country) {
     this.temperature = temperature;
     this.pressure = pressure;
     this.humidity = humidity;
@@ -8,6 +8,7 @@ class Weather {
     this.tempMax = tempMax;
     this.windSpeed = windSpeed;
     this.description = description;
+    this.country = country;
   }
 
 }

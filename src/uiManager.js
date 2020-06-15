@@ -8,6 +8,8 @@ const uiManager = (()=> {
   const temperature = document.querySelector('#temperature');
   const humidity = document.querySelector('#humidity');
   const windSpeed = document.querySelector('#wind-speed');
+  const country = document.querySelector('#country');
+  const city = document.querySelector('#city');
 
   inputGeo.addEventListener('keypress',(e) => {
     const queryValue = e.target.value;
@@ -28,6 +30,8 @@ const uiManager = (()=> {
     temperature.textContent = weather.temperature.toFixed(0)+'º';
     humidity.textContent = weather.humidity+'%';
     windSpeed.textContent = weather.windSpeed+' m/s';
+    city.textContent = inputGeo.value;
+    country.textContent = weather.country;
   };
 
 })();
