@@ -10,6 +10,10 @@ const uiManager = (()=> {
   const windSpeed = document.querySelector('#wind-speed');
   const country = document.querySelector('#country');
   const city = document.querySelector('#city');
+  const unitSwitch = document.querySelector('#units');
+  const fareheintSwitch = document.querySelector('#farenheit-switch');
+  const celsiusSwitch = document.querySelector('#celsius-switch');
+  let degreeUnit = 'c';
 
   inputGeo.addEventListener('keypress',(e) => {
     const queryValue = e.target.value;
@@ -19,10 +23,22 @@ const uiManager = (()=> {
         mainDOM.style.backgroundImage = `url(${response.url})`;
       });
 
-      OpenWeatherApi.getWeatherByCity(queryValue).then((weather)=> {
+      OpenWeatherApi.getWeatherByCity(queryValue, degreeUnit).then((weather)=> {
         updateWeather(weather);
       });
     }
+  });
+
+  fareheintSwitch.addEventListener('click', (e) => {
+    celsiusSwitch.classList.remove('selected');
+    fareheintSwitch.classList.add('selected');
+    degreeUnit = 'f';
+  });
+
+  celsiusSwitch.addEventListener('click', (e) => {
+    fareheintSwitch.classList.remove('selected');
+    celsiusSwitch.classList.add('selected');
+    degreeUnit = 'c';
   });
 
   const updateWeather = (weather) => {

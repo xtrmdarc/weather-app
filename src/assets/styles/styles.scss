@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;900&display=swap');
 
 $headerHeight: 60px;
+$headerComponentBorderRadius: 20px;
+$headerComponentPadding: 8px 12px;
 
 * {
   box-sizing: border-box;
@@ -29,27 +31,41 @@ main {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding: 10px;
+      padding: 10px 20px;;
       width: 100%;
       height: $headerHeight;
       color: white;
 
-      div {
-        
-      }
-
       .switch-temp {
-        
+        border: 1px solid white;
+        border-radius: $headerComponentBorderRadius;
+        padding: $headerComponentPadding;
+        display: flex;
+        justify-content: space-between;
+        width: 80px;
+
+        span {
+          color: rgba(255, 255, 255, 0.281);
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &.selected {
+            font-weight: 800;
+            color: white;
+          }
+        }  
       }
 
       .geo-wrapper {
-          border-radius: 20px;
+          border-radius: $headerComponentBorderRadius;
           border: 1px solid white;
 
         .input-geo {
           border: none;
           background-color: transparent;
-          padding: 8px 12px;
+          padding: $headerComponentPadding;
           font-size: 16px;
           color: white;
 
