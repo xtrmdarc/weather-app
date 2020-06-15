@@ -51,7 +51,11 @@ main {
           background-color: transparent;
           padding: 8px 12px;
           font-size: 16px;
-          color: white;  
+          color: white;
+
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.651);
+          }
         }
       }
     }
@@ -61,7 +65,7 @@ main {
 .overlay {
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.281);
+  background-color: rgba(0, 0, 0, 0.381);
 }
 
 .main-content {
@@ -71,7 +75,6 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 40px;
 
   .main-wrapper {
     display: flex;
@@ -133,8 +136,7 @@ main {
     .temp {
       text-align: center;
       .temperature {
-        font-size: 170px;
-        font-weight: 800;
+        font-size: 200px;
       }
     }
 
@@ -155,7 +157,7 @@ main {
            
           span {
             text-transform: uppercase;
-
+            font-size: 18px;
             &:last-child {
               margin-top: 30px;
             }

@@ -6,7 +6,7 @@ const unsplashApi = (() => {
     const randomPhotoHost = apiHost+'?'+query
 
     const fullQuery = apiHost + query;
-    return fetch(randomPhotoHost, {method: 'get'});
+    return fetch(randomPhotoHost, { method: 'get' });
   };
 
   return { getImageBySearch };
