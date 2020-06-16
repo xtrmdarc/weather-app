@@ -10,25 +10,22 @@ const openWeatherApi = (()=> {
     return new Promise((resolve, reject) => {
       fetch(fetchQuery)
       .then((response)=> {
-        console.log(response.status);
+
         if(response.status != 200){
           reject('City not found.');
           return;
         } else {
           response.json().then((json) => {
-            const weather = new Weather(json.main.temp, json.main.pressure, json.main.humidity, json.main.temp_min, json.main.temp_max, json.wind.speed, json.weather[0].description, Util.getCountryNameByCode(json.sys.country) );
+            const weather = new Weather(json.main.temp, json.main.pressure, json.main.humidity, json.main.temp_min, json.main.temp_max, json.wind.speed, json.weather[0].description, Util.getCountryNameByCode(json.sys.country), cityName );
   
             resolve(weather);
           });
         }
-
-        
       }).catch(() => {
-        console.log('entro');
+
         reject('City not found.');
       });
-    });
-    
+    }); 
   }
   return { getWeatherByCity };
 })();

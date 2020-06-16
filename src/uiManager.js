@@ -23,19 +23,7 @@ const uiManager = (()=> {
 
     if(e.code === 'Enter' && queryValue.trim().length > 0)
     {
-      mainLoader.style.display = 'block';
-      
-
-      UnsplashApi.getImageBySearch(queryValue).then((response)=> {
-        mainDOM.style.backgroundImage = `url(${response.url})`;
-        mainLoader.style.display = 'none';
-        OpenWeatherApi.getWeatherByCity(queryValue, degreeUnit).then((weather)=> {
-          updateWeather(weather);
-        }).catch((err) => {
-          errorMessage.style.display = 'block';
-          errorMessage.textContent = err;
-        });
-      });
+      searchForCity(queryValue);
     }
   });
 
@@ -51,14 +39,31 @@ const uiManager = (()=> {
     degreeUnit = 'c';
   });
 
+  const searchForCity = (city) => {
+    mainLoader.style.display = 'block';
+
+    UnsplashApi.getImageBySearch(city).then((response)=> {
+      mainDOM.style.backgroundImage = `url(${response.url})`;
+      mainLoader.style.display = 'none';
+      OpenWeatherApi.getWeatherByCity(city, degreeUnit).then((weather)=> {
+        updateWeather(weather);
+      }).catch((err) => {
+        errorMessage.style.display = 'block';
+        errorMessage.textContent = err;
+      });
+    });
+  }
+
   const updateWeather = (weather) => {
     weatherDesc.textContent = weather.description;
     temperature.textContent = weather.temperature.toFixed(0)+'º';
     humidity.textContent = weather.humidity+'%';
     windSpeed.textContent = weather.windSpeed+' m/s';
-    city.textContent = inputGeo.value;
+    city.textContent = weather.city;
     country.textContent = weather.country;
   };
+
+  return { searchForCity };
 
 })();
 
