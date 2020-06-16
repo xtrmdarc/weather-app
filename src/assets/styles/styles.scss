@@ -12,7 +12,7 @@ $headerComponentPadding: 8px 12px;
   outline: none;
 }
 
-html, 
+html,
 body {
   height: 100%;
   color: white;
@@ -23,7 +23,7 @@ main {
   background-image: url('../../france.jpg');
   background-size: cover;
 
-  header  {
+  header {
     width: 100%;
 
     nav {
@@ -31,7 +31,7 @@ main {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;;
+      padding: 10px 20px;
       width: 100%;
       height: $headerHeight;
       color: white;
@@ -55,8 +55,9 @@ main {
             font-weight: 800;
             color: white;
           }
-        }  
+        }
       }
+
       .search-wrapper {
         display: flex;
         height: 100%;
@@ -72,7 +73,7 @@ main {
           margin-right: 8px;
           display: none;
         }
-        
+
         @keyframes spin {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
@@ -105,7 +106,6 @@ main {
           }
         }
       }
-      
     }
   }
 }
@@ -130,7 +130,7 @@ main {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    
+
     &:first-child {
       height: 40%;
     }
@@ -157,14 +157,13 @@ main {
           font-size: 80px;
           text-transform: uppercase;
         }
-        
+
         .capital {
           font-size: 40px;
           align-self: flex-end;
           text-transform: uppercase;
         }
       }
-      
     }
 
     .weather-type {
@@ -183,6 +182,7 @@ main {
 
     .temp {
       text-align: center;
+
       .temperature {
         font-size: 200px;
       }
@@ -202,7 +202,7 @@ main {
           display: flex;
           flex-direction: column;
           align-items: center;
-           
+
           span {
             text-transform: uppercase;
             font-size: 18px;
@@ -216,4 +216,3 @@ main {
     }
   }
 }
-

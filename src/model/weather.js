@@ -1,6 +1,6 @@
 class Weather {
-
-  constructor(temperature, pressure, humidity, tempMin, tempMax, windSpeed, description, country, city) {
+  constructor(temperature, pressure, humidity, tempMin, tempMax, windSpeed,
+    description, country, city) {
     this.temperature = temperature;
     this.pressure = pressure;
     this.humidity = humidity;
@@ -11,7 +11,6 @@ class Weather {
     this.country = country;
     this.city = city;
   }
-
 }
 
 export default Weather;
