@@ -28,6 +28,7 @@ Use "npm run-script " followed by any of the following commands :
 [Live Demo Version](https://rawcdn.githack.com/xtrmdarc/weather-app/8ad493eef7012ab03688cb6d512e7db52030ce4d/dist/index.html)
 
 ## Preview
+![PreviewVideo](https://user-images.githubusercontent.com/40712459/84867116-98878500-b072-11ea-9037-b90fd25a4aeb.gif)
 ![Preview](./preview.png)
 
 ## Authors
