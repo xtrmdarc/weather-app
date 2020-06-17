@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;900&display=swap');
+
+$headerHeight: 60px;
+$headerComponentBorderRadius: 20px;
+$headerComponentPadding: 8px 12px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  color: white;
+}
+
+main {
+  height: 100%;
+  background-image: url('../../france.jpg');
+  background-size: cover;
+
+  header {
+    width: 100%;
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      width: 100%;
+      height: $headerHeight;
+      color: white;
+
+      .switch-temp {
+        border: 1px solid white;
+        border-radius: $headerComponentBorderRadius;
+        padding: $headerComponentPadding;
+        display: flex;
+        justify-content: space-between;
+        width: 80px;
+
+        span {
+          color: rgba(255, 255, 255, 0.281);
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &.selected {
+            font-weight: 800;
+            color: white;
+          }
+        }
+      }
+
+      .search-wrapper {
+        display: flex;
+        height: 100%;
+        align-items: center;
+
+        .loader {
+          border: 1.3px solid #f3f3f3;
+          border-top: 1.3px solid #3498db;
+          border-radius: 50%;
+          height: 30px;
+          width: 30px;
+          animation: spin 2s linear infinite;
+          margin-right: 8px;
+          display: none;
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+        .geo-wrapper {
+          border-radius: $headerComponentBorderRadius;
+          border: 1px solid white;
+          position: relative;
+
+          .input-geo {
+            border: none;
+            background-color: transparent;
+            padding: $headerComponentPadding;
+            font-size: 16px;
+            color: white;
+
+            &::placeholder {
+              color: rgba(255, 255, 255, 0.651);
+            }
+          }
+
+          #error-message {
+            position: absolute;
+            left: 6px;
+            bottom: -26px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.795);
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.381);
+}
+
+.main-content {
+  width: 100%;
+  height: calc(100% - #{$headerHeight});
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .main-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    &:first-child {
+      height: 40%;
+    }
+
+    &:last-child {
+      height: 60%;
+    }
+
+    .block {
+      width: 50%;
+    }
+
+    .geo {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      div {
+        display: flex;
+        flex-direction: column;
+
+        .country {
+          font-size: 80px;
+          text-transform: uppercase;
+        }
+
+        .capital {
+          font-size: 40px;
+          align-self: flex-end;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .weather-type {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      .actual {
+        text-transform: uppercase;
+        font-size: 30px;
+        font-weight: lighter;
+        letter-spacing: 4px;
+        word-spacing: 10px;
+      }
+    }
+
+    .temp {
+      text-align: center;
+
+      .temperature {
+        font-size: 200px;
+      }
+    }
+
+    .stats {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      .wrapper {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+
+        & > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          span {
+            text-transform: uppercase;
+            font-size: 18px;
+
+            &:last-child {
+              margin-top: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

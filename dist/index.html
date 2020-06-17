@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The app of the weather</title>
+</head>
+<body>
+  <main>
+    <div class="overlay">
+      <header>
+        <nav>
+          <div class="switch-temp">
+            <span id="celsius-switch" class="temp-switch selected"> ºC </span>
+            <hr>
+            <span id="farenheit-switch" class="temp-switch" > ºF </span>
+          </div>
+          <div class="search-wrapper">
+            <div id="main-loader" class="loader">
+            </div>
+            <div class="geo-wrapper">
+              <input id="input-geo" type="text" class="input-geo" placeholder="Search your place">
+              <span id="error-message" >City not found</span>
+            </div>
+          </div>
+          
+        </nav>
+      </header>
+      <div class="main-content">
+          <div class="main-wrapper">
+            <div class="block geo">
+              <div>
+                <h1 id="city" class="country" >Paris</h1>
+                <h2 id="country" class="capital" >France</h2>
+              </div>
+            </div>
+            <div class="block weather-type"><p id="weather-description" class="actual">NIGHT | CLOUD</p></div>
+          </div>
+          <div class="main-wrapper">
+            <div class="block temp">
+              <span id="temperature" class="temperature" >12º</span>
+            </div>
+            <div class="block stats">
+              <div class="wrapper">
+                <div class="humidity">
+                  <span>HUMIDITY</span>
+                  <span id="humidity">80%</span>
+                </div>
+                <hr>
+                <div class="wind" >
+                  <span>WIND</span>
+                  <span id="wind-speed" >12KM/M</span>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="./main.js"></script>
+</html>
