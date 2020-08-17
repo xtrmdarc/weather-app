@@ -31,6 +31,13 @@ Use "npm run-script " followed by any of the following commands :
 ![PreviewVideo](https://user-images.githubusercontent.com/40712459/84867116-98878500-b072-11ea-9037-b90fd25a4aeb.gif)
 ![Preview](./preview.png)
 
+## Future Work
+
+- Share weather update on social media buttons
+- Schedule weather alert based on forecast
+- Build the backend infrastructure
+- Create user accounts
+
 ## Authors
 
 👤 **Diego Antonio Reyes Coronado**
