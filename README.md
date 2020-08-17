@@ -1,6 +1,6 @@
 # The App of the Weather - JS App
 
-> I developed a Weather application on my own in which I had the chance to consolidate my knowledge about JS Promises, Asynchronous tasks, working with APIS, and using Webpack as a module manager. The application will automatically detect your city and display its current weather time. You can also search for any other city in the world using the search bar at the top right section. Furthermore, you can select the unit of degree in which  you want to get the temperature (ºC or ºF).
+> I developed a Weather application on my own in which I had the chance to consolidate my knowledge about JS Promises, Asynchronous tasks, working with APIS, and using Webpack as a module manager. The application will automatically detect your city and display its current weather time. You can also search for any other city in the world using the search bar in the top right section. Furthermore, you can select the unit of the degree in which you want to get the temperature (ºC or ºF).
 
 ## Built With
 
